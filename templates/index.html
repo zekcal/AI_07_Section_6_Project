@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
+    <title>Holly Judge Twit!</title>
+
+    <!-- 부트스트랩 -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{ % static "css/base.css" % }">
+    <link rel="stylesheet" type="text/css" href="{ % block extrastyle % }{ % endblock % }">
+
+    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
+    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="col-lg-12" style="text-align:center;">
+    <h1>텍스트를 입력하고, 원하는 어투를 선택하세요. <br>딥 러닝을 사용해 문장을 더 만들어 드립니다.</h1>
+    <form action="/result" method="post">
+    <input type="text" name="input_text" class="form-control" placeholder="단어 혹은 문장을 입력해주세요">
+    <br><br>
+    <button type="submit" name="bible" class="btn btn-primary">성스럽게!</button>
+    <br><br>
+    <button type="submit" name="judge" class="btn btn-warning">판사같이!</button>
+    <br><br>
+    <button type="submit" name="twit" class="btn btn-info">올림픽을 본 트위터리안처럼!</button>
+    <br><br>
+  
+</form>
+    <div class="container">
+        <h2>결과는?</h2>
+        <p><samp>{{pred}}</samp></p>
+    </div></div></div>
+
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
